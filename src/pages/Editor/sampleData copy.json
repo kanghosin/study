@@ -1,0 +1,121 @@
+{
+  "kind": "Template",
+  "version": "components/v1",
+  "spec": {
+    "children": [
+      {
+        "kind": "Layout",
+        "code": "REQUEST",
+        "version": "components/v1",
+        "metadata": {
+          "lables": {
+            "name": "요청"
+          },
+          "annotations": {
+            "permission.hs.com/bound-keys": ["type", "orgName", "workspace"]
+          }
+        },
+        "spec": {
+          "children": [
+            {
+              "kind": "Form",
+              "version": "components/v1",
+              "spec": {
+                "layout": "vertical",
+                "htmlType": "div",
+                "collapsed": true,
+                "decorators": true,
+                "children": [
+                  {
+                    "kind": "FormItem",
+                    "version": "components/v1",
+                    "metadata": {
+                      "annotations": {
+                        "field.form.core/id": "notice",
+                        "display.core/display-mode": "readOnly",
+                        "field.form.core/hidden": true
+                      }
+                    },
+                    "spec": {
+                      "label": "참고사항",
+                      "children": {
+                        "kind": "TextArea",
+                        "version": "components/v1",
+                        "spec": {
+                          "initValue": "abcde"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "kind": "FormItem",
+                    "version": "components/v1",
+                    "metadata": {
+                      "annotations": {
+                        "field.form.core/id": "type",
+                        "field.form.core/rules": [
+                          {
+                            "required": true,
+                            "message": "틀렸습니다."
+                          }
+                        ]
+                      }
+                    },
+                    "spec": {
+                      "label": "구분",
+                      "children": {
+                        "kind": "RadioGroup",
+                        "version": "components/v1",
+                        "spec": {
+                          "options": [
+                            {
+                              "key": "create",
+                              "value": "create",
+                              "label": "신규"
+                            },
+                            {
+                              "key": "delete",
+                              "value": "delete",
+                              "label": "삭제"
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "kind": "FormItem",
+                    "version": "components/v1",
+                    "metadata": {
+                      "annotations": {
+                        "field.form.core/id": "orgName",
+                        "display.core/display-mode": "editable",
+                        "field.form.core/rules": [
+                          {
+                            "required": true,
+                            "message": "틀렸습니다."
+                          }
+                        ],
+                        "field.form.core/initValue": ""
+                      }
+                    },
+                    "spec": {
+                      "label": "타이틀",
+                      "children": {
+                        "kind": "Input",
+                        "version": "components/v1",
+                        "spec": {
+                          "placeholder": "abcde"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

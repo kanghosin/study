@@ -1,0 +1,21 @@
+{
+  "kind": "FormItem",
+  "version": "components/v1",
+  "metadata": {
+    "annotations": {
+      "field.form.core/id": "notice",
+      "display.core/display-mode": "readOnly",
+      "field.form.core/hidden": true
+    }
+  },
+  "spec": {
+    "label": "참고사항",
+    "children": {
+      "kind": "TextArea",
+      "version": "components/v1",
+      "spec": {
+        "initValue": "abcde"
+      }
+    }
+  }
+}
